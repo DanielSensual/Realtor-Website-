@@ -1,0 +1,7 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#0A0C10"/>
+  <rect x="120" y="180" width="960" height="440" fill="#111318" stroke="#C3A35C" stroke-width="2"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="#F8F6F1" font-family="serif" font-size="32" letter-spacing="8">
+    HERO REEL PLACEHOLDER
+  </text>
+</svg>

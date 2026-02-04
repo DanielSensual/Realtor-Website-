@@ -1,0 +1,7 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#ECEAE7"/>
+  <rect x="80" y="120" width="640" height="360" fill="#F8F6F1" stroke="#C3A35C" stroke-width="2"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="#121212" font-family="serif" font-size="20" letter-spacing="4">
+    IMAGE PLACEHOLDER
+  </text>
+</svg>
