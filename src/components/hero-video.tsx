@@ -4,16 +4,18 @@ import { SearchModule } from "@/components/search-module";
 export function HeroVideo() {
   return (
     <section className="relative min-h-[80vh] overflow-hidden bg-midnight text-ivory">
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/hero-poster.svg"
-      >
-        <source src="/hero-reel.mp4" type="video/mp4" />
-      </video>
+      <iframe
+        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden pointer-events-none"
+        src="https://streamable.com/e/zz41lc?autoplay=1&loop=1&muted=1&nocontrols=1"
+        frameBorder="0"
+        allow="autoplay; fullscreen"
+        allowFullScreen
+        style={{ transform: 'scale(1.5)', transformOrigin: 'center center' }}
+      />
+      <div
+        className="absolute inset-0 bg-cover bg-center motion-safe:hidden"
+        style={{ backgroundImage: "url('/hero-poster.svg')" }}
+      />
       <div className="absolute inset-0 hero-overlay" />
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-32">
         <div className="max-w-3xl">
@@ -22,7 +24,7 @@ export function HeroVideo() {
             Curated estates. Cinematic living. A boutique experience.
           </h1>
           <p className="mt-6 text-lg text-ivory/80">
-            The Real Estate Collection pairs elevated taste with data-driven expertise across Florida's most
+            The Real Estate Collection pairs elevated taste with data-driven expertise across Florida&apos;s most
             prestigious communities.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
