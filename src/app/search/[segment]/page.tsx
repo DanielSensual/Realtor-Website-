@@ -1,11 +1,19 @@
 import { idxProvider } from "@/lib/idx/provider";
 import type { ListingSegment } from "@/lib/idx/types";
 import { ListingCard } from "@/components/listing-card";
+import { notFound } from "next/navigation";
 
 const segments: ListingSegment[] = ["buy", "rent", "sell", "commercial"];
 
+export function generateStaticParams() {
+  return segments.map((segment) => ({ segment }));
+}
+
 export default async function SearchPage({ params }: { params: { segment: ListingSegment } }) {
-  const segment = segments.includes(params.segment) ? params.segment : "buy";
+  if (!segments.includes(params.segment)) {
+    notFound();
+  }
+  const segment = params.segment;
   const listings = await idxProvider.search({ segment });
 
   return (

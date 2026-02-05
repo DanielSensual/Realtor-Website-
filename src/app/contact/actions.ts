@@ -1,27 +1,32 @@
 "use server";
 
-import { headers } from "next/headers";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { getClientIp, isValidEmail, normalizeEmail, normalizeText } from "@/lib/form-utils";
 
-export async function submitContact(formData: FormData) {
-  const name = String(formData.get("name") ?? "");
-  const email = String(formData.get("email") ?? "");
-  const message = String(formData.get("message") ?? "");
-  const honeypot = String(formData.get("company") ?? "");
+export async function submitContact(formData: FormData): Promise<void> {
+  const name = normalizeText(formData.get("name"));
+  const email = normalizeEmail(formData.get("email"));
+  const message = normalizeText(formData.get("message"));
+  const honeypot = normalizeText(formData.get("company"));
 
+  // Spam honeypot check - silently reject
   if (honeypot) {
-    return { ok: false, error: "Spam detected." };
+    return;
   }
 
+  // Validation - silently reject invalid submissions
   if (!name || !email || !message) {
-    return { ok: false, error: "All fields are required." };
+    return;
+  }
+  if (!isValidEmail(email)) {
+    return;
   }
 
-  const ip = headers().get("x-forwarded-for") ?? "unknown";
-  const rate = checkRateLimit(ip);
+  const rate = checkRateLimit(getClientIp());
   if (!rate.allowed) {
-    return { ok: false, error: "Too many requests. Try again shortly." };
+    return;
   }
 
-  return { ok: true };
+  // TODO: Add actual form submission logic (email, database, etc.)
+  console.log("Contact form submitted:", { name, email, message });
 }

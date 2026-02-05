@@ -7,7 +7,7 @@ export function Footer() {
         <div>
           <p className="font-serif text-lg tracking-[0.2em] uppercase">The Real Estate Collection</p>
           <p className="mt-4 text-sm text-ink/70">
-            A boutique brokerage delivering concierge service across Florida's most coveted communities.
+            A boutique brokerage delivering concierge service across Florida&apos;s most coveted communities.
           </p>
         </div>
         <div className="grid gap-3 text-sm text-ink/70">

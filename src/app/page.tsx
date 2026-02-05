@@ -7,6 +7,8 @@ import { mockAgents } from "@/content/mock-agents";
 import Link from "next/link";
 import Image from "next/image";
 import { JsonLd } from "@/components/json-ld";
+import { getSiteUrl } from "@/lib/site";
+import { CommunityMedia } from "@/components/community-media";
 
 export default function HomePage() {
   // Show only first 3 listings and first 4 agents on homepage
@@ -20,7 +22,7 @@ export default function HomePage() {
           "@context": "https://schema.org",
           "@type": "RealEstateAgent",
           name: "The Real Estate Collection",
-          url: "https://www.therealestatecollection.com",
+          url: getSiteUrl(),
           areaServed: "Florida",
           sameAs: []
         }}
@@ -47,12 +49,10 @@ export default function HomePage() {
                 className="group overflow-hidden rounded-3xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={community.heroImage}
-                    alt={community.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                  <CommunityMedia
+                    slug={community.slug}
+                    heroImage={community.heroImage}
+                    name={community.name}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">

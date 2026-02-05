@@ -2,20 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { mockAgents } from "@/content/mock-agents";
 import { Button } from "@/components/button";
+import { notFound } from "next/navigation";
+
+export function generateStaticParams() {
+  return mockAgents.map((agent) => ({ slug: agent.slug }));
+}
 
 export default function AgentProfile({ params }: { params: { slug: string } }) {
   const agent = mockAgents.find((item) => item.slug === params.slug);
 
   if (!agent) {
-    return (
-      <div className="mx-auto max-w-4xl px-6 py-20">
-        <h1 className="font-serif text-3xl">Agent not found</h1>
-        <p className="mt-4 text-sm text-ink/70">Please return to our agents page to find a specialist.</p>
-        <Link href="/agents" className="mt-6 inline-block text-sm text-brass underline">
-          View all agents
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   return (

@@ -1,11 +1,5 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/search/[segment]/page": "app/search/[segment]/page.js",
-  "/agents/page": "app/agents/page.js",
-  "/commercial/page": "app/commercial/page.js",
-  "/communities/page": "app/communities/page.js",
-  "/sell/page": "app/sell/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/about/page": "app/about/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/search/buy/page": "app/search/buy/page.js",
+  "/agents/page": "app/agents/page.js"
 }

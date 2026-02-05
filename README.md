@@ -9,6 +9,10 @@ npm install
 npm run dev
 ```
 
+## Environment
+
+- `NEXT_PUBLIC_SITE_URL` (optional): public base URL for metadata, sitemap, and robots (e.g. `https://www.therealestatecollection.com`). If unset, Vercel will use `VERCEL_URL` in production and `http://localhost:3000` locally.
+
 ## Structure
 
 - `src/app/` - App Router pages

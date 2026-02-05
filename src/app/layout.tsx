@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { AnalyticsProvider } from "@/components/analytics-provider";
+import { getSiteUrl, siteConfig } from "@/lib/site";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -19,15 +20,15 @@ const sans = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: "The Real Estate Collection | Luxury Real Estate Brokerage",
+    default: `${siteConfig.name} | Luxury Real Estate Brokerage`,
     template: "%s | The Real Estate Collection"
   },
-  description: "A boutique luxury real estate brokerage in Florida offering curated listings, concierge service, and expert agents.",
-  metadataBase: new URL("https://www.therealestatecollection.com"),
+  description: siteConfig.description,
+  metadataBase: new URL(getSiteUrl()),
   openGraph: {
     type: "website",
-    siteName: "The Real Estate Collection",
-    title: "The Real Estate Collection",
+    siteName: siteConfig.name,
+    title: siteConfig.name,
     description: "Luxury real estate expertise with a boutique hospitality approach.",
     images: [
       {

@@ -9,7 +9,7 @@ export default function BuySearchPage() {
                 <p className="text-xs uppercase tracking-[0.4em] text-ink/60">Search Homes</p>
                 <h1 className="mt-4 font-serif text-4xl">Find your next estate.</h1>
                 <p className="mt-4 max-w-2xl text-ink/70">
-                    Browse our curated selection of luxury properties across Florida's most prestigious communities.
+                    Browse our curated selection of luxury properties across Florida&apos;s most prestigious communities.
                 </p>
 
                 <div className="mt-10 rounded-3xl bg-white p-6 shadow-soft">

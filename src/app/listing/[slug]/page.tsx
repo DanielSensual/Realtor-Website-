@@ -2,20 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { idxProvider } from "@/lib/idx/provider";
 import { requestShowing } from "./actions";
+import { mockListings } from "@/content/mock-listings";
+import { notFound } from "next/navigation";
+
+export function generateStaticParams() {
+  return mockListings.map((listing) => ({ slug: listing.slug }));
+}
 
 export default async function ListingDetail({ params }: { params: { slug: string } }) {
   const listing = await idxProvider.getListing(params.slug);
 
   if (!listing) {
-    return (
-      <div className="mx-auto max-w-4xl px-6 py-20">
-        <h1 className="font-serif text-3xl">Listing not found</h1>
-        <p className="mt-4 text-sm text-ink/70">Please return to search to explore active listings.</p>
-        <Link href="/search/buy" className="mt-6 inline-block text-sm text-brass underline">
-          Browse all listings
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   return (

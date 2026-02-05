@@ -3,6 +3,7 @@ import Link from "next/link";
 import { mockCommunities } from "@/content/mock-communities";
 import { ListingCard } from "@/components/listing-card";
 import { mockListings } from "@/content/mock-listings";
+import { notFound } from "next/navigation";
 
 // Community city mappings for filtering listings
 const communityToCities: Record<string, string[]> = {
@@ -11,19 +12,15 @@ const communityToCities: Record<string, string[]> = {
   "naples": ["Naples", "Marco Island"]
 };
 
+export function generateStaticParams() {
+  return mockCommunities.map((community) => ({ slug: community.slug }));
+}
+
 export default function CommunityDetail({ params }: { params: { slug: string } }) {
   const community = mockCommunities.find((item) => item.slug === params.slug);
 
   if (!community) {
-    return (
-      <div className="mx-auto max-w-4xl px-6 py-20">
-        <h1 className="font-serif text-3xl">Community not found</h1>
-        <p className="mt-4 text-sm text-ink/70">Please return to our communities page to explore.</p>
-        <Link href="/communities" className="mt-6 inline-block text-sm text-brass underline">
-          View all communities
-        </Link>
-      </div>
-    );
+    notFound();
   }
 
   // Filter listings by community cities
