@@ -1,6 +1,6 @@
 {
+  "/search/buy/page": "app/search/buy/page.js",
   "/page": "app/page.js",
   "/agents/page": "app/agents/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/search/buy/page": "app/search/buy/page.js"
+  "/blog/page": "app/blog/page.js"
 }

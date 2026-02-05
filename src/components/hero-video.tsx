@@ -3,26 +3,21 @@ import { SearchModule } from "@/components/search-module";
 
 export function HeroVideo() {
   return (
-    <section className="relative min-h-[80vh] overflow-hidden bg-midnight text-ivory">
+    <section className="relative min-h-screen overflow-hidden bg-midnight text-ivory -mt-20">
       <iframe
-        className="absolute motion-reduce:hidden pointer-events-none"
+        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden pointer-events-none"
         src="https://streamable.com/e/zz41lc?autoplay=1&loop=1&muted=1&nocontrols=1"
         frameBorder="0"
         allow="autoplay; fullscreen"
         allowFullScreen
-        style={{
-          top: '-50%',
-          left: '-50%',
-          width: '200%',
-          height: '200%',
-        }}
+        style={{ transform: 'scale(1.5)', transformOrigin: 'center center' }}
       />
       <div
         className="absolute inset-0 bg-cover bg-center motion-safe:hidden"
         style={{ backgroundImage: "url('/hero-poster.svg')" }}
       />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-32">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-40">
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-[0.4em] text-ivory/70">Luxury Brokerage</p>
           <h1 className="mt-6 font-serif text-4xl leading-tight text-shadow sm:text-5xl lg:text-6xl">
