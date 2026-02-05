@@ -32,35 +32,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries = staticRoutes.map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: now,
-    changeFrequency: "weekly",
+    changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.6
   }));
 
   const agentEntries = mockAgents.map((agent) => ({
     url: `${siteUrl}/agents/${agent.slug}`,
     lastModified: now,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: 0.5
   }));
 
   const communityEntries = mockCommunities.map((community) => ({
     url: `${siteUrl}/communities/${community.slug}`,
     lastModified: now,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: 0.6
   }));
 
   const blogEntries = mockPosts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
     lastModified: post.date,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: 0.5
   }));
 
   const listingEntries = mockListings.map((listing) => ({
     url: `${siteUrl}/listing/${listing.slug}`,
     lastModified: now,
-    changeFrequency: "daily",
+    changeFrequency: "daily" as const,
     priority: 0.7
   }));
 
