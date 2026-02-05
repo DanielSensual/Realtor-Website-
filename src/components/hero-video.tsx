@@ -3,15 +3,19 @@ import { SearchModule } from "@/components/search-module";
 
 export function HeroVideo() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-midnight text-ivory -mt-20">
-      <iframe
-        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden pointer-events-none"
-        src="https://streamable.com/e/zz41lc?autoplay=1&loop=1&muted=1&nocontrols=1"
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-        style={{ transform: 'scale(1.5)', transformOrigin: 'center center' }}
-      />
+    <section className="relative min-h-screen overflow-hidden bg-midnight text-ivory -mt-16 lg:-mt-20">
+      <video
+        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/hero-poster.svg"
+        aria-hidden="true"
+      >
+        <source src="/hero-reel.mp4" type="video/mp4" />
+      </video>
       <div
         className="absolute inset-0 bg-cover bg-center motion-safe:hidden"
         style={{ backgroundImage: "url('/hero-poster.svg')" }}
