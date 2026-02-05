@@ -1,24 +1,6 @@
 {
-  "/about/page": "app/about/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
   "/agents/page": "app/agents/page.js",
   "/blog/page": "app/blog/page.js",
-  "/commercial/page": "app/commercial/page.js",
-  "/communities/page": "app/communities/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/offices/page": "app/offices/page.js",
-  "/home-valuation/page": "app/home-valuation/page.js",
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/property-management/page": "app/property-management/page.js",
-  "/page": "app/page.js",
-  "/idx-login/page": "app/idx-login/page.js",
-  "/search/buy/page": "app/search/buy/page.js",
-  "/sell/page": "app/sell/page.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/agents/[slug]/page": "app/agents/[slug]/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/communities/[slug]/page": "app/communities/[slug]/page.js",
-  "/search/[segment]/page": "app/search/[segment]/page.js",
-  "/listing/[slug]/page": "app/listing/[slug]/page.js"
+  "/search/buy/page": "app/search/buy/page.js"
 }

@@ -5,12 +5,17 @@ export function HeroVideo() {
   return (
     <section className="relative min-h-[80vh] overflow-hidden bg-midnight text-ivory">
       <iframe
-        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden pointer-events-none"
+        className="absolute motion-reduce:hidden pointer-events-none"
         src="https://streamable.com/e/zz41lc?autoplay=1&loop=1&muted=1&nocontrols=1"
         frameBorder="0"
         allow="autoplay; fullscreen"
         allowFullScreen
-        style={{ transform: 'scale(1.5)', transformOrigin: 'center center' }}
+        style={{
+          top: '-50%',
+          left: '-50%',
+          width: '200%',
+          height: '200%',
+        }}
       />
       <div
         className="absolute inset-0 bg-cover bg-center motion-safe:hidden"

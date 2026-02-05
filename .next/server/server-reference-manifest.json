@@ -1,1 +1,14 @@
-{"node":{"fd4842f0021fe01d282e15897aaf2e5b4db29232":{"workers":{"app/contact/page":"5427"},"layer":{"app/contact/page":"rsc"}},"150f775b002d471c5148e9b6bb0d5158a2651c24":{"workers":{"app/listing/[slug]/page":"4709"},"layer":{"app/listing/[slug]/page":"rsc"}}},"edge":{},"encryptionKey":"0HjQ9aZB0byvevNpMyT1+76Gs+kRSPfBARetwrOKD/Q="}
+{
+  "node": {
+    "fd4842f0021fe01d282e15897aaf2e5b4db29232": {
+      "workers": {
+        "app/contact/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdanielcastillo%2FProjects%2FWebsites%2FRealtor%20Modern%20Website%20Design%2Fsrc%2Fapp%2Fcontact%2Factions.ts%22%2C%5B%22submitContact%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/contact/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "cMdC7PCPPa3Oe9mX532HubLA9xWInpGoWTVrkpPAqGw="
+}
